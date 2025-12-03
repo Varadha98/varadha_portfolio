@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2000" height="800" viewBox="0 0 2000 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="VRP metallic logo on dark background">
+  <defs>
+    <!-- Grain / textured background -->
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="saturate" values="0" result="mono"/>
+      <feBlend in="SourceGraphic" in2="mono" mode="overlay" />
+    </filter>
+
+    <!-- Subtle vignette -->
+    <radialGradient id="vignette" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.0" />
+      <stop offset="65%" stop-color="#000000" stop-opacity="0.18" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.6" />
+    </radialGradient>
+
+    <!-- Metallic gradient for text -->
+    <linearGradient id="metalGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#d7d7d7" />
+      <stop offset="15%" stop-color="#f2f2f2" />
+      <stop offset="35%" stop-color="#bfbfbf" />
+      <stop offset="60%" stop-color="#e6e6e6" />
+      <stop offset="100%" stop-color="#9f9f9f" />
+    </linearGradient>
+
+    <!-- Soft shadow for letters -->
+    <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feOffset dx="0" dy="8" result="offOut" />
+      <feGaussianBlur in="offOut" stdDeviation="14" result="blurOut" />
+      <feColorMatrix in="blurOut" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.45 0" result="shadow"/>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Gloss highlight -->
+    <linearGradient id="gloss" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Slight chrome polish using specular lighting -->
+    <filter id="specular" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur" />
+      <feSpecularLighting in="blur" surfaceScale="4" specularConstant="0.6" specularExponent="20" lighting-color="#ffffff" result="specOut">
+        <fePointLight x="-2000" y="-1000" z="2000"/>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceGraphic" operator="in" result="specComp"/>
+      <feMerge>
+        <feMergeNode in="specComp"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- A clean geometric font-family fallback stack -->
+    <style type="text/css"><![CDATA[
+      .title { font-family: 'Montserrat', 'Inter', 'Segoe UI', Roboto, Arial, sans-serif; font-weight: 800; letter-spacing: -0.02em; }
+      .sub { font-family: 'Inter', Arial, sans-serif; fill: #bdbdbd; font-size: 28px; }
+    ]]></style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#0b0b0b" />
+  <rect width="100%" height="100%" fill="url(#vignette)" style="mix-blend-mode:multiply" />
+  <g filter="url(#grain)" opacity="0.08">
+    <rect width="100%" height="100%" fill="#111" />
+  </g>
+
+  <!-- Center group for logo -->
+  <g transform="translate(1000,420)">
+    <!-- Letter shapes -->
+    <!-- Using SVG text for scalability; strokes and transforms for geometric feel -->
+    <g transform="translate(-600,-220)">
+      <!-- VRP text block -->
+      <text x="0" y="240" class="title" font-size="260" text-anchor="start" fill="url(#metalGrad)" filter="url(#softShadow)" style="paint-order: stroke fill markers;">
+        VRP
+      </text>
+
+      <!-- Gloss layer -->
+      <text x="0" y="240" class="title" font-size="260" text-anchor="start" fill="url(#gloss)" opacity="0.55" style="mix-blend-mode:screen; filter:url(#specular)">
+        VRP
+      </text>
+
+      <!-- Subtle inner cut shine using stroke -->
+      <text x="0" y="240" class="title" font-size="260" text-anchor="start" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1" style="filter: blur(0.2px)">
+        VRP
+      </text>
+
+      <!-- Optional tagline below -->
+      <text x="20" y="350" class="sub">Full Stack • Design • Dev</text>
+    </g>
+  </g>
+
+  <!-- Decorative faint horizontal grain lines -->
+  <g opacity="0.03" transform="translate(0,0)">
+    <rect x="0" y="50" width="2000" height="1" fill="#fff" />
+    <rect x="0" y="150" width="2000" height="1" fill="#fff" />
+    <rect x="0" y="250" width="2000" height="1" fill="#fff" />
+  </g>
+</svg>
