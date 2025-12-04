@@ -1,81 +1,13 @@
-// "use client";
-
-// import Header from "@/components/header";
-// import SplitText from "@/components/SplitText";
-// import SplashCursor from "@/components/SplashCursor";
-
-
-// export default function Contact() {
-
-
-//   return (
-
-    
-//     <div className="min-h-screen bg-black dark:bg-black text-white dark:text-white transition-colors duration-300">
-//         <Header/>
-//     <section className="container mx-auto px-6 pt-24 pb-16 text-center">
-//         <SplashCursor />
-// <SplitText
-//   text="VARADHA RAJAN PERUMAL"
-//   className="text-2xl font-semibold text-center"
-//   delay={20}
-//   duration={0.6}
-//   ease="power3.out"
-//   splitType="chars"
-//   from={{ opacity: 0, y: 40 }}
-//   to={{ opacity: 1, y: 0 }}
-//   threshold={0.1}
-//   rootMargin="-100px"
-//   textAlign="center"
- 
-// />
-// <SplitText
-//   text="9962715863"
-//   className="text-2xl font-semibold text-center"
-//   delay={20}
-//   duration={0.6}
-//   ease="power3.out"
-//   splitType="chars"
-//   from={{ opacity: 0, y: 40 }}
-//   to={{ opacity: 1, y: 0 }}
-//   threshold={0.1}
-//   rootMargin="-100px"
-//   textAlign="center"
- 
-// />
-// <SplitText
-//   text="pvaradharajan98@gmail.com"
-//   className="text-2xl font-semibold text-center"
-//   delay={20}
-//   duration={0.6}
-//   ease="power3.out"
-//   splitType="chars"
-//   from={{ opacity: 0, y: 40 }}
-//   to={{ opacity: 1, y: 0 }}
-//   threshold={0.1}
-//   rootMargin="-100px"
-//   textAlign="center"
- 
-// />
-//       </section>
-//       </div>
-//   );
-// }
-
-
 "use client";
 
 import Header from "@/components/header";
 import SplashCursor from "@/components/SplashCursor";
 import FadeContent from "@/components/FadeContent";
-import StarBorder from "@/components/StarBorder";
 
 export default function Contact() {
   return (
     <div className="min-h-screen bg-black text-white transition-colors duration-300">
       <Header />
-
-  
 
       <section className="flex flex-col items-center justify-center min-h-[80vh] px-6">
         
@@ -113,15 +45,6 @@ export default function Contact() {
             </FadeContent>
           </div>
 
-          {/* CTA Button */}
-          {/* <div className="flex justify-center pt-2">
-            <a
-              href="mailto:varadharajanp.dev@gmail.com"
-              className="px-6 py-3 text-md font-semibold border border-cyan-300 rounded-xl hover:bg-cyan-300 hover:text-black transition-all duration-300"
-            >
-              Send Email
-            </a>
-          </div> */}
         </div>
       </section>
     </div>

@@ -1,24 +1,3 @@
-// "use client";
-
-// import Header from "@/components/header";
-// import SplitText from "@/components/SplitText";
-
-
-// export default function Experience() {
-
-
-//   return (
-
-//     <div className="min-h-screen bg-black dark:bg-black text-white dark:text-white transition-colors duration-300">
-//         <Header/>
-//     <section className="container mx-auto px-6 pt-24 pb-16 text-center">
-        
-//       </section>
-//       </div>
-//   );
-// }
-
-
 "use client";
 
 import Header from "@/components/header";
